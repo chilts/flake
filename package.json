@@ -1,7 +1,7 @@
 {
     "name": "flake",
     "description": "Generate unique (approximately sortable) IDs in a distributed environment.",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "author": {
         "name":"Andrew Chilton",
         "email":"chilts@appsattic.com",
