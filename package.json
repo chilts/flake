@@ -1,0 +1,38 @@
+{
+    "name": "flake",
+    "description": "Generate unique (approximately sortable) IDs in a distributed environment.",
+    "version": "0.1.0",
+    "author": {
+        "name":"Andrew Chilton",
+        "email":"chilts@appsattic.com",
+        "url":"http://www.chilts.org/"
+    },
+    "homepage": "https://github.com/appsattic/flake",
+    "contributors": [],
+    "devDependencies": {
+        "tap": "~0.3.x"
+    },
+    "dependencies": {},
+    "main": "./flake.js",
+    "engines": {
+        "node": ">= 0.6.0"
+    },
+    "repository": {
+        "type" : "git",
+        "url": "git://github.com/appsattic/flake.git"
+    },
+   "bugs" : {
+        "url" : "http://github.com/appsattic/flake/issues",
+        "mail" : "chilts@appsattic.com"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "http://appsattic.mit-license.org/2012/"
+    }],
+    "keywords": [
+        "distributed", "id", "unique", "twitter", "snowflake", "flake"
+    ],
+    "scripts" : {
+        "test" : "tap test/*.js"
+    }
+}
