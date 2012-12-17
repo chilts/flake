@@ -14,16 +14,16 @@ Would give something like:
 
 ```
 013b829b1520-0000-18f0-984be1b8b104
-013b829b1527-0001-18f0-984be1b8b104
 013b829b1527-0000-18f0-984be1b8b104
+013b829b1527-0001-18f0-984be1b8b104
 ```
 
 Running it again might give:
 
 ```
 013b829b9680-0000-18f3-984be1b8b104
+013b829b9680-0001-18f3-984be1b8b104
 013b829b9685-0000-18f3-984be1b8b104
-013b829b9685-0001-18f3-984be1b8b104
 ```
 
 As you can see, the time has increased by a few seconds and the PID is different. The mac address is the same and the
