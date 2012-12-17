@@ -25,7 +25,8 @@ module.exports = function(macInterface, callback) {
             var tsHex = timestamp.toString(16);
             tsHex = pad('' + tsHex, 12);
 
-            if ( timestamp !== currentTimestamp ) {
+            // if we check for 'less than' this also removes uncertainty if the clock goes backwards
+            if ( currentTimestamp < timestamp ) {
                 counter = 0;
                 currentTimestamp = timestamp;
             }
