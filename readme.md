@@ -3,10 +3,10 @@ Flake - generate unique (approximately sortable) IDs in a distributed environmen
 ## Usage ##
 
 ```
-require(flake)('eth0', function(err, flake) {);
-    console.log(flake());
-    console.log(flake());
-    console.log(flake());
+require('flake')('eth0', function(err, flakeGen) {
+    console.log(flakeGen());
+    console.log(flakeGen());
+    console.log(flakeGen());
 });
 ```
 
