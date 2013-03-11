@@ -1,4 +1,5 @@
 var fs = require('fs');
+var netif = require('netif');
 
 function pad(str, length) {
     while ( str.length < length ) {
@@ -8,36 +9,34 @@ function pad(str, length) {
 }
 
 module.exports = function(macInterface, callback) {
-    var currentTimestamp = Date.now();
-
+    // remember the pid
     var pidHex = process.pid.toString(16);
     pidHex = pad('' + pidHex, 4);
 
-    var macHex = fs.readFile('/sys/class/net/' + macInterface +  '/address', function(err, data) {
-        if(err) return callback(err);
+    // start remembering where we are for the sake of incrementing the counter
+    var currentTimestamp = Date.now();
 
-        macHex = data.toString('utf8').replace(/:/g, '').replace(/\s+/g, '');
+    var macHex = netif.getMacAddress('eth0').replace(/:/g, '').toLowerCase();
 
-        var counter = 0;
+    var counter = 0;
 
-        callback(null, function() {
-            var timestamp = Date.now();
-            var tsHex = timestamp.toString(16);
-            tsHex = pad('' + tsHex, 12);
+    return function() {
+        var timestamp = Date.now();
+        var tsHex = timestamp.toString(16);
+        tsHex = pad('' + tsHex, 12);
 
-            // if we check for 'less than' this also removes uncertainty if the clock goes backwards
-            if ( currentTimestamp < timestamp ) {
-                counter = 0;
-                currentTimestamp = timestamp;
-            }
-            counterHex = pad('' + counter.toString(16), 4);
+        // if we check for 'less than' this also removes uncertainty if the clock goes backwards
+        if ( currentTimestamp < timestamp ) {
+            counter = 0;
+            currentTimestamp = timestamp;
+        }
+        counterHex = pad('' + counter.toString(16), 4);
 
-            counter++;
-            if ( counter > 65535 ) {
-                counter = 0;
-            }
+        counter++;
+        if ( counter > 65535 ) {
+            counter = 0;
+        }
 
-            return tsHex + '-' + counterHex + '-' + pidHex + '-' + macHex;
-        });
-    });
+        return tsHex + '-' + counterHex + '-' + pidHex + '-' + macHex;
+    };
 };

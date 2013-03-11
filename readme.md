@@ -1,13 +1,61 @@
-Flake - generate unique (approximately sortable) IDs in a distributed environment.
+Flake - generate unique (approximately sortable practically unique) IDs in a distributed environment.
+
+There are 3.403e+38 (or 340,282,366,920,938,463,463,374,607,431,768,211,456) possible flake numbers. Use in distributed
+environments where you don't have a central service which can be a single point of failure - perfect when you want
+everything to be redundant and independent of each other.
+
+## The make-up of a Flake ID ##
+
+Example Flake IDs from two different machines:
+
+```
+013c798f75ac-0000-1154-984be1b8b104
+013c798f75ac-0001-1154-984be1b8b104
+013c798f75ad-0000-1154-984be1b8b104
+013c798f75ad-0001-1154-984be1b8b104
+013c798f75ad-0002-1154-984be1b8b104
+013c798f75ad-0003-1154-984be1b8b104
+
+013c7990a044-0000-08ff-00027298bef9
+013c7990a045-0000-08ff-00027298bef9
+013c7990a045-0001-08ff-00027298bef9
+013c7990a045-0002-08ff-00027298bef9
+013c7990a045-0003-08ff-00027298bef9
+```
+
+As you can see, the Flake Id is made up of: <code>timestamp-counter-pid-macaddress</code> and can be seen in the
+following table:
+
+```
++---------+--------------+---------+------+--------------+
+| Machine | Timestamp    | Counter | PID  | Mac Address  |
++---------+--------------+---------+------+--------------+
+|    A    | 013c798f75ac | 0000    | 1154 | 984be1b8b104 |
+|    A    | 013c798f75ac | 0001    | 1154 | 984be1b8b104 |
+|    A    | 013c798f75ad | 0000    | 1154 | 984be1b8b104 |
+|    A    | 013c798f75ad | 0001    | 1154 | 984be1b8b104 |
+|    A    | 013c798f75ad | 0002    | 1154 | 984be1b8b104 |
+|    A    | 013c798f75ad | 0003    | 1154 | 984be1b8b104 |
+|    B    | 013c7990a044 | 0000    | 11ff | 00027298bef9 |
+|    B    | 013c7990a045 | 0000    | 11ff | 00027298bef9 |
+|    B    | 013c7990a045 | 0001    | 11ff | 00027298bef9 |
+|    B    | 013c7990a045 | 0002    | 11ff | 00027298bef9 |
+|    B    | 013c7990a045 | 0003    | 11ff | 00027298bef9 |
++---------+--------------+---------+------+--------------+
+```
+
+As you can see, each Flake ID is 128 bits long, consisting of a 48 bit timestamp, 16 bit counter, 16 bit PID and a 48
+bit mac address.
+
+All of these FlakeIDs are <code>approximately sortable</code> and <code>practically unique</code>.
 
 ## Usage ##
 
 ```
-require('flake')('eth0', function(err, flakeGen) {
-    console.log(flakeGen());
-    console.log(flakeGen());
-    console.log(flakeGen());
-});
+var flake = require('flake')('eth0');
+console.log(flake());
+console.log(flake());
+console.log(flake());
 ```
 
 Would give something like:

@@ -1,7 +1,7 @@
 {
     "name": "flake",
     "description": "Generate unique (approximately sortable) IDs in a distributed environment.",
-    "version": "0.3.1",
+    "version": "0.4.0",
     "author": {
         "name":"Andrew Chilton",
         "email":"chilts@appsattic.com",
@@ -12,7 +12,9 @@
     "devDependencies": {
         "tap": "~0.3.x"
     },
-    "dependencies": {},
+    "dependencies": {
+        "netif": "0.1.x"
+    },
     "main": "./flake.js",
     "engines": {
         "node": ">= 0.6.0"
