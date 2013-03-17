@@ -126,10 +126,15 @@ Currently there is a possibility to generate the same ID in the same process on 
 This situation hasn't yet been solved but is known about. Therefore, you should run NTP in a mode which doesn't move
 the clock backwards.
 
+## Author ##
+
+Written by [Andrew Chilton](http://chilts.org/) - [Blog](http://chilts.org/blog/) -
+[Twitter](https://twitter.com/andychilton).
+
 ## License ##
 
-The MIT License : http://opensource.org/licenses/MIT
+Copyright (c) 2012 Andrew Chilton.
 
-Copyright (c) 2012 AppsAttic Ltd. http://appsattic.com/
+MIT License : http://chilts.mit-license.org/2012/
 
 (Ends)

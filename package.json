@@ -4,10 +4,10 @@
     "version": "0.4.0",
     "author": {
         "name":"Andrew Chilton",
-        "email":"chilts@appsattic.com",
-        "url":"http://www.chilts.org/"
+        "email":"andychilton@gmail.com",
+        "url":"http://chilts.org/"
     },
-    "homepage": "https://github.com/appsattic/flake",
+    "homepage": "https://github.com/chilts/flake",
     "contributors": [],
     "devDependencies": {
         "tap": "~0.3.x"
@@ -21,15 +21,15 @@
     },
     "repository": {
         "type" : "git",
-        "url": "git://github.com/appsattic/flake.git"
+        "url": "git://github.com/chilts/flake.git"
     },
    "bugs" : {
-        "url" : "http://github.com/appsattic/flake/issues",
-        "mail" : "chilts@appsattic.com"
+        "url" : "http://github.com/chilts/flake/issues",
+        "mail" : "andychilton@gmail.com"
     },
     "licenses": [{
         "type": "MIT",
-        "url": "http://appsattic.mit-license.org/2012/"
+        "url": "http://chilts.mit-license.org/2012/"
     }],
     "keywords": [
         "distributed", "id", "unique", "twitter", "snowflake", "flake"
