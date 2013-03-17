@@ -1,4 +1,9 @@
-Flake - generate unique (approximately sortable practically unique) IDs in a distributed environment.
+# Flake #
+
+<strong>Generate practically unique (approximately sortable practically unique) IDs in a distributed
+environment.</strong>
+
+## Flake Numbers ##
 
 There are 3.403e+38 (or 340,282,366,920,938,463,463,374,607,431,768,211,456) possible flake numbers. Use in distributed
 environments where you don't have a central service which can be a single point of failure - perfect when you want

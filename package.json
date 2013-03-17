@@ -1,6 +1,6 @@
 {
     "name": "flake",
-    "description": "Generate unique (approximately sortable) IDs in a distributed environment.",
+    "description": "Generate practically unique (approximately sortable) IDs in a distributed environment.",
     "version": "0.4.1",
     "author": {
         "name":"Andrew Chilton",
