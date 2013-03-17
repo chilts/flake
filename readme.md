@@ -1,7 +1,6 @@
 # Flake #
 
-<strong>Generate practically unique (approximately sortable practically unique) IDs in a distributed
-environment.</strong>
+<strong>Generate practically unique approximately sortable IDs in a distributed environment.</strong>
 
 ## Flake Numbers ##
 
