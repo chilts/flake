@@ -13,7 +13,7 @@
         "tap": "~0.3.x"
     },
     "dependencies": {
-        "netif": ">= 0.1.5"
+        "netif": ">= 0.1.6"
     },
     "main": "./flake.js",
     "engines": {
