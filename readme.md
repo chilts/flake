@@ -64,7 +64,8 @@ var interfaces = os.networkInterfaces();
 console.log(Object.keys(interfaces));
 ```
 
-Look for something like 'eth0', 'en0', 'wlan0', 'venet0' or 'net0'.
+Look for something like 'eth0', 'en0', 'wlan0', 'venet0' or 'net0' (Note: you may have a number other than 0.) Don't
+choose something like 'lo' or 'tun0'. Experiment to make sure it works. :)
 
 In the following example, I'm using ```eth0```, but this is not guaranteed to work on your machine. You need to change
 it to something which exists on your machine.
