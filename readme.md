@@ -55,6 +55,20 @@ All of these FlakeIDs are <code>approximately sortable</code> and <code>practica
 
 ## Usage ##
 
+Firstly, find a network interface you can use so you can obtain a mac address:
+
+```
+var os = require('os');
+
+var interfaces = os.networkInterfaces();
+console.log(Object.keys(interfaces));
+```
+
+Look for something like 'eth0', 'en0', 'wlan0', 'venet0' or 'net0'.
+
+In the following example, I'm using ```eth0```, but this is not guaranteed to work on your machine. You need to change
+it to something which exists on your machine.
+
 ```
 var flake = require('flake')('eth0');
 console.log(flake());
