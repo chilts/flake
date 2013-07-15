@@ -16,7 +16,7 @@ module.exports = function(macInterface, callback) {
     // start remembering where we are for the sake of incrementing the counter
     var currentTimestamp = Date.now();
 
-    var macHex = netif.getMacAddress('eth0').replace(/:/g, '').toLowerCase();
+    var macHex = netif.getMacAddress(macInterface).replace(/:/g, '').toLowerCase();
 
     var counter = 0;
 
