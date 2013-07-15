@@ -2,7 +2,7 @@
 
 <strong>Generate practically unique approximately sortable IDs in a distributed environment.</strong>
 
-[![NPM](http://nodei.co/npm/flake.png)](http://npm.im/flake)
+[![NPM](https://nodei.co/npm/flake.png)](http://npm.im/flake)
 
 ## Flake Numbers ##
 
