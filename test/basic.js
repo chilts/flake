@@ -1,25 +1,27 @@
-var tap = require("tap");
+var test = require("tape");
 var flake;
 
 // --------------------------------------------------------------------------------------------------------------------
 // basic tests
 
-tap.test("load flake", function (t) {
+var name = 'wlan0';
+
+test("load flake", function (t) {
     flake = require('../flake.js');
     t.ok(flake, 'flake loaded');
     t.end();
 });
 
-tap.test("using eth0", function (t) {
-    var flakeGen = flake('eth0');
+test("using " + name, function (t) {
+    var flakeGen = flake(name);
     var id = flakeGen();
     console.log(id);
-    t.ok(id, 'ID generated ok using eth0');
+    t.ok(id, 'ID generated ok using ' + name);
     t.end();
 });
 
 // don't do this :)
-tap.test("using lo", function (t) {
+test("using lo", function (t) {
     var flakeGen = flake('lo');
     var id = flakeGen();
     console.log(id);
@@ -27,15 +29,15 @@ tap.test("using lo", function (t) {
     t.end();
 });
 
-tap.test("check ID has a particular format", function (t) {
-    var flakeGen = flake('eth0');
+test("check ID has a particular format", function (t) {
+    var flakeGen = flake(name);
     var id = flakeGen().replace(/[0-9a-f]/g, 'x');
     t.equal(id, 'xxxxxxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx', 'ID format OK');
     t.end();
 });
 
-tap.test("check that the PIDs are the same", function (t) {
-    var flakeGen = flake('eth0');
+test("check that the PIDs are the same", function (t) {
+    var flakeGen = flake(name);
     // may or may not be in the same timestamp
     var id1 = flakeGen();
     var id2 = flakeGen();

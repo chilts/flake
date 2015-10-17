@@ -1,40 +1,45 @@
 {
-    "name": "flake",
-    "description": "Generate practically unique (approximately sortable) IDs in a distributed environment.",
-    "version": "1.0.0",
-    "author": {
-        "name":"Andrew Chilton",
-        "email":"andychilton@gmail.com",
-        "url":"http://chilts.org/"
-    },
-    "homepage": "https://github.com/chilts/flake",
-    "contributors": [],
-    "devDependencies": {
-        "tap": "~0.3.x"
-    },
-    "dependencies": {
-        "netif": ">= 0.1.6"
-    },
-    "main": "./flake.js",
-    "engines": {
-        "node": ">= 0.6.0"
-    },
-    "repository": {
-        "type" : "git",
-        "url": "git://github.com/chilts/flake.git"
-    },
-   "bugs" : {
-        "url" : "http://github.com/chilts/flake/issues",
-        "mail" : "andychilton@gmail.com"
-    },
-    "licenses": [{
-        "type": "MIT",
-        "url": "http://chilts.mit-license.org/2012/"
-    }],
-    "keywords": [
-        "distributed", "id", "unique", "twitter", "snowflake", "flake"
-    ],
-    "scripts" : {
-        "test" : "tap test/*.js"
+  "name": "flake",
+  "description": "Generate practically unique (approximately sortable) IDs in a distributed environment.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Andrew Chilton",
+    "email": "andychilton@gmail.com",
+    "url": "http://chilts.org/"
+  },
+  "homepage": "https://github.com/chilts/flake",
+  "contributors": [],
+  "devDependencies": {
+    "tape": "^4.2.1"
+  },
+  "dependencies": {},
+  "main": "./flake.js",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chilts/flake.git"
+  },
+  "bugs": {
+    "url": "http://github.com/chilts/flake/issues",
+    "mail": "andychilton@gmail.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://chilts.mit-license.org/2012/"
     }
+  ],
+  "keywords": [
+    "distributed",
+    "id",
+    "unique",
+    "twitter",
+    "snowflake",
+    "flake"
+  ],
+  "scripts": {
+    "test": "tape test/*.js"
+  }
 }

@@ -1,5 +1,5 @@
 var fs = require('fs');
-var netif = require('netif');
+var os = require('os');
 
 function pad(str, length) {
     while ( str.length < length ) {
@@ -16,7 +16,11 @@ module.exports = function(macInterface, callback) {
     // start remembering where we are for the sake of incrementing the counter
     var currentTimestamp = Date.now();
 
-    var macHex = netif.getMacAddress(macInterface).replace(/:/g, '').toLowerCase();
+    var interfaces = os.networkInterfaces();
+    if ( macInterface in interfaces === false ) {
+        throw new Error("Unknown interface " + macInterface);
+    }
+    var macHex = interfaces[macInterface][0].mac.replace(/:/g, '').toLowerCase();
 
     var counter = 0;
 
